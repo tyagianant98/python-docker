@@ -19,3 +19,15 @@
 # To run container from image
 
     docker run -d --name=<NAME_OF_CONTAINER_OPTIONAL> -p <HOST_PORT>:8080 <IMAGE_NAME>:<IMAGE_VERSION>
+
+# Tag local image to docker hub repo
+
+docker tag <local image name with version> <dockerhub repo name>
+
+# To push docker image to docker
+
+docker push <dockerhub repo name>
+
+# To delete all local images forcefully
+
+docker rmi -f $(docker images -a -q)
