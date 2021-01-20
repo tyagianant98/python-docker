@@ -1,12 +1,12 @@
 # python-docker
 
-- To deploy follow below instructions
+# To deploy follow below instructions
 
 1. git clone this repo
 
-2. Make sure to install and configure Python3
+2. Make sure to install and configure Python:3
 
-3. Install dependencies using command : pip install -r dependencies.txt
+3. Install dependencies using command : pip install -r dependencies.txt .
 
 4. run project : python server.py
 
