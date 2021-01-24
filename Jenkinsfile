@@ -29,7 +29,7 @@ pipeline {
         stage('Publish image to docker registry') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'dockerhub_anant', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-                    sh('docker login --username=tyagianant98 --password="<PWD>"')
+                    sh('docker login --username=tyagianant98 --password="<_PWD_>"')
                     sh "docker tag python-docker:${BUILD_ID} tyagianant98/python-project:${BUILD_ID}"
                     sh "docker push tyagianant98/python-project:${BUILD_ID}"
                 }
