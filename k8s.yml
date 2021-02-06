@@ -5,7 +5,7 @@ metadata:
   labels:
     app: python-project2
 spec:
-    replicas: 3
+    replicas: 4
     selector:
       matchLabels:
         app: python-project2

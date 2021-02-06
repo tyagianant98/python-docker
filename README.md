@@ -65,3 +65,15 @@
     kubectl delete deployment tyagianant
 
     kubectl delete deployments/tyagianant
+
+# For apiversion:
+
+    kubectl api-resources | grep deployment
+
+# Create service and deployment by yml file:
+
+    kubectl create -f <yml file name>
+
+# Update after changes by yml file:
+
+    kubectl apply -f <yml file name>
