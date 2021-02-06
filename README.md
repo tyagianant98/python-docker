@@ -35,3 +35,33 @@
 # To delete all the containers forcefully
 
     docker rm -vf $(docker ps -a -q)
+
+# Enable dashboard in Kubernetes
+
+    microk8s enable dashboard
+
+    token=$(microk8s kubectl -n kube-system get secret | grep default-token | cut -d " " -f1)
+
+    microk8s kubectl -n kube-system describe secret $token
+
+    microk8s kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443
+
+    https://127.0.0.1:10443
+
+# Create deployment
+
+    kubectl create deployment tyagianant --image=tyagianant98/python-project:v19
+
+# Update replica set
+
+    kubectl scale --replicas=2 deployments/tyagianant
+
+# Expose deployment as service
+
+    kubectl expose deployment tyagianant --port=8080 --target-port=8080
+
+# Delete a deployment
+
+    kubectl delete deployment tyagianant
+
+    kubectl delete deployments/tyagianant

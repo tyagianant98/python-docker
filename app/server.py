@@ -7,7 +7,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return f"Hello World"
+    machine = socket.gethostname()
+    return f"Hello World from container {machine}"
 
 
 @app.route("/ping")
