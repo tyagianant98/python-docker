@@ -16,6 +16,12 @@ def ping():
     return f"pong"
 
 
+@app.route("/ngbps")
+def ndv():
+    return f"This is a Data Center in Bhiwadi,Rajisthan"
+
+
+
 @app.route("/anant")
 def tyagi():
     return render_template('anant.html')
@@ -23,3 +29,4 @@ def tyagi():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int("8080"), debug=True)
+
